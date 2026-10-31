@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827"><meta name="description" content="25개 전문 AI 에이전트 통합 운영 대시보드">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css"><title>AI Agent HQ</title>
+</head>
+<body>
+<header class="top"><div><div class="eyebrow">OPERATING SYSTEM</div><h1>AI AGENT <span>HQ</span></h1></div><button id="install" class="install hidden">앱 설치</button></header>
+<main>
+<section class="welcome"><div><p class="eyebrow">CEO COMMAND CENTER</p><h2>사업 운영 현황</h2><p class="muted">25개 전문 에이전트 · 4개 본부</p></div><div class="status"><i></i> 시범 운영</div></section>
+<section class="stats"><article><small>전문 에이전트</small><strong>25</strong></article><article><small>사업 본부</small><strong>3</strong></article><article><small>공통 지원</small><strong>5</strong></article></section>
+<nav class="tabs"><button class="tab active" data-tab="overview">대시보드</button><button class="tab" data-tab="agents">에이전트</button><button class="tab" data-tab="tasks">업무 요청</button></nav>
+<section id="overview" class="panel">
+<h3>본부별 운영</h3><div id="divisionCards" class="division-grid"></div>
+<div class="notice"><b>운영 원칙</b><p>AI는 분석·초안·후보 추천을 수행합니다. 계약, 배정, 결제, 외부 발송 등 중요한 실행은 관리자가 확인한 뒤 진행합니다.</p></div>
+</section>
+<section id="agents" class="panel hidden">
+<div class="section-head"><h3>전문 에이전트</h3><span class="muted">총 25명 + CEO</span></div>
+<input id="search" class="search" placeholder="에이전트 또는 업무 검색">
+<div id="agentList"></div>
+</section>
+<section id="tasks" class="panel hidden">
+<h3>업무 요청 등록</h3><form id="taskForm">
+<label>담당 본부<select id="division" required></select></label>
+<label>업무 제목<input id="taskTitle" required placeholder="예: 다음 달 테니스 대회 운영안 작성"></label>
+<label>요청 내용<textarea id="taskDesc" rows="4" placeholder="목표, 기한, 참고사항을 입력하세요."></textarea></label>
+<button class="primary">업무 등록</button>
+</form><h3 class="task-title">등록된 업무</h3><div id="taskList"></div>
+</section>
+</main>
+<footer>AI AGENT HQ <span>· 로컬 시범 버전</span></footer>
+<dialog id="detail"><button class="close" id="close">닫기</button><div id="detailBody"></div></dialog>
+<script src="app.js"></script>
+</body></html>
